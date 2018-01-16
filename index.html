@@ -31,11 +31,21 @@
         //by reference - Objects
         const person = {
             name: 'Maegan',
-            age: 100
+            age: 100,
+            favFoods: {
+                fruit: 'grapes',
+                vegetable: 'broccoli'
+            }
         }
             // To make a SEPARATE copy, we can...
-            const developer = Object.assign({}, person, { occupation: 'developer'});
+            const developer = Object.assign({}, person, { occupation: 'developer', age: 26});
             console.log(person, developer);
+            // BUT THIS ONLY WORKS ONE LEVEL DEEP
+
+            // To hack a deep clone, we can...
+            const developer2 = JSON.parse(JSON.stringify(person));
+            developer2.favFoods.fruit = 'banana';
+            console.log(person.favFoods.fruit, developer2.favFoods.fruit);
     </script>
 </body>
 </html>
