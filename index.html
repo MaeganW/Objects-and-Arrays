@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // by value - numbers, strings, booleans
+        let num = 55;
+        let num2 = num;
+        console.log(num, num2);
+
+        num = 66;
+        console.log(num, num2);
+
+        //by reference - Arrays
+        const dogs = ['Fluffy', 'Fang', 'Red'];
+            // To make a SEPARATE copy, we can...
+            const dogs2 = dogs.slice();
+            const dogs3 = [].concat(dogs);
+            const dogs4 = [...dogs];
+            const dogs5 = Array.from(dogs);
+
+            dogs4[2] = 'Rover';
+            console.log(dogs, dogs4);
+
+        //by reference - Objects
+        const person = {
+            name: 'Maegan',
+            age: 100
+        }
+            // To make a SEPARATE copy, we can...
+            const developer = Object.assign({}, person, { occupation: 'developer'});
+            console.log(person, developer);
+    </script>
+</body>
+</html>
